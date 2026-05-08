@@ -2,8 +2,8 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOBTEL x SOLPUP - Cosmic Synergy Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MOBTEL x SOLPUP - Mobile Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <script>
@@ -13,7 +13,6 @@
                     colors: {
                         mobtel: '#FF5F00',
                         solpup: '#38BDF8', 
-                        space: '#020617',
                         dark: '#020408'
                     },
                     fontFamily: {
@@ -30,15 +29,27 @@
             color: #F8FAFC;
             font-family: 'Space Grotesk', sans-serif;
             margin: 0;
-            overflow: hidden;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        /* Split Screen Animation */
+        /* Responsive Split Layout */
         .split-container {
             display: flex;
             height: 100vh;
             width: 100vw;
-            transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+            flex-direction: row;
+            transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+        }
+
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+            }
+            .pane {
+                height: 50vh;
+                width: 100vw;
+            }
         }
 
         .pane {
@@ -47,318 +58,188 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
             position: relative;
             cursor: pointer;
-            overflow: hidden;
-            padding: 2rem;
+            padding: 1.5rem;
+            text-align: center;
         }
 
-        .pane-mobtel { background: radial-gradient(circle at center, #1a0a00 0%, #020408 100%); }
+        .pane-mobtel { background: radial-gradient(circle at center, #1a0a00 0%, #020408 100%); border-bottom: 1px solid rgba(255,95,0,0.1); }
         .pane-solpup { background: radial-gradient(circle at center, #082f49 0%, #020408 100%); }
 
-        .pane:hover { flex: 1.5; }
+        /* Cyber Artifacts Scaling */
+        .cyber-node { width: 80px; height: 80px; position: relative; margin-bottom: 1rem; filter: drop-shadow(0 0 30px #FF5F00); }
+        .node-ring { position: absolute; inset: 0; border: 2px solid #FF5F00; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; animation: morph 6s linear infinite; }
+        .node-core { position: absolute; inset: 20%; background: linear-gradient(135deg, #FF5F00, #FFB800); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
 
-        /* Mobtel Cyber Artifact */
-        .cyber-node {
-            width: 130px;
-            height: 130px;
-            position: relative;
-            margin-bottom: 2rem;
-            filter: drop-shadow(0 0 40px #FF5F00);
-        }
-        .node-ring {
-            position: absolute;
-            inset: 0;
-            border: 2px solid #FF5F00;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            animation: morph 6s linear infinite;
-        }
-        .node-core {
-            position: absolute;
-            inset: 20%;
-            background: linear-gradient(135deg, #FF5F00, #FFB800);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-        }
+        .pomeranian-container { width: 100px; height: 100px; position: relative; margin-bottom: 1rem; filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.6)); }
+        .cosmo-helmet { position: absolute; inset: 0; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 50%; background: rgba(56, 189, 248, 0.1); backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; animation: float 4s ease-in-out infinite; }
+        .head { width: 50px; height: 45px; background: #FFFFFF; border-radius: 50% 50% 45% 45%; position: relative; }
+        .eyes { display: flex; gap: 12px; position: absolute; top: 18px; left: 50%; transform: translateX(-50%); }
+        .eye { width: 5px; height: 5px; background: #1a1a1a; border-radius: 50%; }
+        .nose { width: 6px; height: 4px; background: #000; border-radius: 40%; position: absolute; top: 28px; left: 50%; transform: translateX(-50%); }
 
-        /* SolPup Pomeranian Cosmonaut */
-        .pomeranian-container {
-            width: 180px;
-            height: 180px;
-            position: relative;
-            margin-bottom: 2rem;
-            filter: drop-shadow(0 0 50px rgba(56, 189, 248, 0.6));
-        }
-        .cosmo-helmet {
-            position: absolute;
-            inset: 0;
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            background: rgba(56, 189, 248, 0.1);
-            backdrop-filter: blur(5px);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: float 4s ease-in-out infinite;
-        }
-        .pup-face {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        .ears {
-            display: flex;
-            gap: 40px;
-            position: absolute;
-            top: 25px;
-        }
-        .ear {
-            width: 25px;
-            height: 25px;
-            background: #FFFFFF;
-            border-radius: 50% 50% 10% 10%;
-        }
-        .head {
-            width: 90px;
-            height: 80px;
-            background: #FFFFFF;
-            border-radius: 50% 50% 45% 45%;
-            position: relative;
-            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.05);
-        }
-        .eyes {
-            display: flex;
-            gap: 25px;
-            position: absolute;
-            top: 35px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .eye { width: 8px; height: 8px; background: #1a1a1a; border-radius: 50%; }
-        .nose {
-            width: 10px;
-            height: 6px;
-            background: #000;
-            border-radius: 40%;
-            position: absolute;
-            top: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+        @keyframes morph { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(180deg) scale(1.1); } 100% { transform: rotate(360deg) scale(1); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-        @keyframes morph {
-            0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.1); }
-            100% { transform: rotate(360deg) scale(1); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0); }
-            50% { transform: translateY(-15px) rotate(5deg); }
-        }
-
+        /* Views Overlay */
         .content-view {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 100vw;
             width: 100vw;
             height: 100vh;
             background: #020408;
             overflow-y: auto;
-            transition: left 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+            transition: left 0.5s cubic-bezier(0.85, 0, 0.15, 1);
             z-index: 100;
+            padding-bottom: 80px;
         }
         .view-active { left: 0 !important; }
 
-        .back-btn {
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 1.5rem; margin-bottom: 1rem; }
+
+        /* Mobile Counter Bar */
+        .counter-bar {
             position: fixed;
-            top: 2rem;
-            left: 2rem;
-            z-index: 200;
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(15px);
-            padding: 0.8rem 1.6rem;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 0.75rem;
-            border: 1px solid rgba(255,255,255,0.1);
-            cursor: pointer;
-            color: white;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+            font-size: 0.7rem;
             text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #64748b;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 40px;
+        .back-btn {
+            position: sticky;
+            top: 1rem;
+            margin-left: 1rem;
+            z-index: 200;
+            background: rgba(255,255,255,0.1);
+            padding: 0.6rem 1rem;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 0.7rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            display: inline-block;
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <div id="backBtn" class="back-btn hidden" onclick="closeViews()">← Wyjście z Orbity</div>
+    <!-- Licznik Wejść -->
+    <div class="counter-bar">
+        Aktywne sesje węzła: <span id="visitCount" class="text-mobtel font-bold ml-2">0000</span>
+    </div>
 
-    <!-- MAIN SPLIT SELECTION -->
     <div id="splitScreen" class="split-container">
-        
-        <!-- MOBTEL -->
+        <!-- MOBTEL PANE -->
         <div class="pane pane-mobtel" onclick="openView('mobtelView')">
-            <div class="cyber-node">
-                <div class="node-ring"></div>
-                <div class="node-core">📡</div>
-            </div>
-            <h2 class="text-5xl md:text-7xl font-black text-mobtel tracking-tighter mb-4 font-sync italic">MOBTEL</h2>
-            <p class="text-slate-500 uppercase tracking-[0.6em] text-[10px] font-bold">Quantum DePIN Protocol</p>
-            <div class="mt-12 px-10 py-4 border border-mobtel text-mobtel rounded-full text-xs font-black uppercase tracking-widest hover:bg-mobtel hover:text-white transition-all duration-300">
-                Inicjuj Łącze
-            </div>
+            <div class="cyber-node"><div class="node-ring"></div><div class="node-core">📡</div></div>
+            <h2 class="text-4xl font-black text-mobtel font-sync italic">MOBTEL</h2>
+            <p class="text-xs opacity-50 uppercase tracking-[0.4em] mt-2">Quantum DePIN</p>
         </div>
 
-        <!-- SOLPUP -->
+        <!-- SOLPUP PANE -->
         <div class="pane pane-solpup" onclick="openView('solpupView')">
             <div class="pomeranian-container">
                 <div class="cosmo-helmet">
-                    <div class="pup-face">
-                        <div class="ears">
-                            <div class="ear"></div>
-                            <div class="ear"></div>
-                        </div>
-                        <div class="head">
-                            <div class="eyes">
-                                <div class="eye"></div>
-                                <div class="eye"></div>
-                            </div>
-                            <div class="nose"></div>
-                        </div>
+                    <div class="head">
+                        <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
+                        <div class="nose"></div>
                     </div>
                 </div>
             </div>
-            <h2 class="text-5xl md:text-7xl font-black text-solpup tracking-tighter mb-4 font-sync italic">SOLPUP</h2>
-            <p class="text-slate-500 uppercase tracking-[0.6em] text-[10px] font-bold">Space Pack Alpha</p>
-            <div class="mt-12 px-10 py-4 border border-solpup text-solpup rounded-full text-xs font-black uppercase tracking-widest hover:bg-solpup hover:text-white transition-all duration-300">
-                Skok w Nadprzestrzeń
-            </div>
+            <h2 class="text-4xl font-black text-solpup font-sync italic">SOLPUP</h2>
+            <p class="text-xs opacity-50 uppercase tracking-[0.4em] mt-2">Space Pack</p>
         </div>
     </div>
 
-    <!-- MOBTEL DETAIL VIEW -->
+    <!-- MOBTEL VIEW -->
     <div id="mobtelView" class="content-view">
-        <div class="max-w-6xl mx-auto pt-32 pb-20 px-8 text-center lg:text-left">
-            <div class="mb-20">
-                <div class="text-mobtel font-bold text-xs tracking-[0.8em] mb-4 uppercase">Infrastruktura Neuronowa</div>
-                <h1 class="text-7xl md:text-9xl font-black mb-6 font-sync italic text-white leading-none">MOBTEL<br><span class="text-mobtel">PRIME</span></h1>
+        <div class="back-btn" onclick="closeViews()">← POWRÓT</div>
+        <div class="px-6 pt-10">
+            <h1 class="text-5xl font-black font-sync italic mb-2">MOBTEL<br><span class="text-mobtel text-3xl">INFRA</span></h1>
+            <p class="text-slate-400 text-sm mb-8">Zdecentralizowana sieć fizyczna nowej generacji.</p>
+            
+            <div class="glass-card">
+                <div class="text-[10px] text-mobtel font-bold uppercase mb-2">Kontrakt Solana</div>
+                <div class="font-mono text-[10px] bg-black/40 p-3 rounded-lg break-all mb-4">24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc</div>
+                <button onclick="copyText('24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc', this)" class="w-full bg-mobtel text-white py-4 rounded-xl font-bold uppercase text-xs tracking-widest">Kopiuj CA</button>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                <div class="glass-card p-12 text-left">
-                    <h3 class="text-2xl font-bold mb-6 text-white uppercase tracking-widest">Globalne Węzły Sieciowe</h3>
-                    <p class="text-slate-400 text-lg leading-relaxed mb-10">
-                        Zdecentralizowana warstwa fizyczna łącząca miliardy urządzeń. Mobtel redefiniuje telekomunikację poprzez technologię DePIN na sieci Solana.
-                    </p>
-                    <div class="p-5 bg-black/50 rounded-2xl mb-8 border border-white/5">
-                        <div class="text-[10px] text-mobtel font-bold uppercase mb-2">Verified Contract Address</div>
-                        <div class="font-mono text-sm text-white/80 break-all">24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc</div>
-                    </div>
-                    <button onclick="copyText('24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc', this)" class="w-full bg-mobtel text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:scale-[1.02] transition-transform shadow-[0_0_30px_rgba(255,95,0,0.3)] mb-4">Kopiuj CA</button>
-                    
-                    <a href="https://phantom.app/ul/browse/https%3A%2F%2Fjup.ag%2Fswap%2FSOL-24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc?ref=https%3A%2F%2Fphantom.app" target="_blank" class="block w-full text-center py-5 border-2 border-mobtel text-mobtel rounded-2xl font-black uppercase tracking-widest hover:bg-mobtel hover:text-white transition-all flex items-center justify-center gap-3">
-                        Swap przez Phantom 👻
-                    </a>
-                </div>
-                
-                <div class="flex flex-col justify-center gap-6">
-                    <a href="https://dexscreener.com/solana/24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="glass-card p-8 flex justify-between items-center group hover:border-mobtel/40 transition-all">
-                        <div class="text-left">
-                            <span class="block text-xl font-bold uppercase tracking-tighter">Live Chart</span>
-                            <span class="text-slate-500 text-[10px] uppercase tracking-widest font-mono">DexScreener Data</span>
-                        </div>
-                        <span class="text-mobtel text-4xl group-hover:translate-x-3 transition-transform">📈</span>
-                    </a>
-                    <a href="https://t.me/mobtel_io" target="_blank" class="glass-card p-8 flex justify-between items-center group hover:bg-white/5 transition-all">
-                        <span class="text-xl font-bold uppercase tracking-widest">Telegram Global</span>
-                        <span class="text-mobtel text-4xl group-hover:scale-110 transition-transform">✈️</span>
-                    </a>
-                    <a href="https://x.com/mobtel_io" target="_blank" class="glass-card p-8 flex justify-between items-center group hover:bg-white/5 transition-all">
-                        <span class="text-xl font-bold uppercase tracking-widest">Twitter / X</span>
-                        <span class="text-mobtel text-4xl group-hover:rotate-12 transition-transform">𝕏</span>
-                    </a>
-                </div>
+            <a href="https://phantom.app/ul/browse/https%3A%2F%2Fjup.ag%2Fswap%2FSOL-24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc?ref=https%3A%2F%2Fphantom.app" target="_blank" class="glass-card flex items-center justify-between border-mobtel/30">
+                <span class="font-bold text-sm uppercase">Swap przez Phantom</span>
+                <span class="text-2xl">👻</span>
+            </a>
+
+            <div class="grid grid-cols-2 gap-4">
+                <a href="https://t.me/mobtel_io" target="_blank" class="glass-card flex flex-col items-center py-6">
+                    <span class="text-2xl mb-2">✈️</span>
+                    <span class="text-[10px] font-bold uppercase">Telegram</span>
+                </a>
+                <a href="https://x.com/mobtel_io" target="_blank" class="glass-card flex flex-col items-center py-6">
+                    <span class="text-2xl mb-2">𝕏</span>
+                    <span class="text-[10px] font-bold uppercase">Twitter</span>
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- SOLPUP DETAIL VIEW -->
-    <div id="solpupView" class="content-view" style="background: radial-gradient(circle at 100% 0%, #082f49 0%, #020408 100%);">
-        <div class="max-w-6xl mx-auto pt-32 pb-20 px-8 text-center md:text-left">
-            <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
-                <div class="pomeranian-container scale-110">
-                    <div class="cosmo-helmet">
-                        <div class="pup-face">
-                            <div class="ears"><div class="ear"></div><div class="ear"></div></div>
-                            <div class="head">
-                                <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
-                                <div class="nose"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center md:text-left">
-                    <div class="text-solpup font-bold text-xs tracking-[0.8em] mb-4 uppercase">Cosmic Breed Alpha</div>
-                    <h1 class="text-7xl md:text-9xl font-black mb-6 font-sync italic text-white leading-none">SOLPUP<br><span class="text-solpup">GALAXY</span></h1>
-                </div>
+    <!-- SOLPUP VIEW -->
+    <div id="solpupView" class="content-view" style="background: radial-gradient(circle at 50% 0%, #082f49 0%, #020408 100%);">
+        <div class="back-btn" onclick="closeViews()">← POWRÓT</div>
+        <div class="px-6 pt-10">
+            <h1 class="text-5xl font-black font-sync italic mb-2 text-white">SOLPUP<br><span class="text-solpup text-3xl">GALAXY</span></h1>
+            
+            <div class="glass-card bg-blue-900/10 border-solpup/20 mt-6">
+                <p class="text-slate-300 text-sm leading-relaxed">Puszysta armia Solana, która nie zna grawitacji. Wspólnie budujemy przyszłość DePIN z Mobtel.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 text-left">
-                <div class="glass-card p-12 bg-blue-900/10 border-solpup/20">
-                    <h3 class="text-2xl font-bold mb-6 text-white uppercase tracking-widest">Księżycowa Flota Szpica</h3>
-                    <p class="text-slate-400 text-lg leading-relaxed mb-10">
-                        Biały Szpic Miniaturowy nie zna granic grawitacji. Jesteśmy puszystą armią w ekosystemie Solana, napędzającą hype dla technologii Mobtel.
-                    </p>
-                    <div class="p-5 bg-black/50 rounded-2xl mb-8 border border-white/5">
-                        <div class="text-[10px] text-solpup font-bold uppercase mb-2">Alpha CA</div>
-                        <div class="font-mono text-sm text-white/80 break-all">24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc</div>
-                    </div>
-                    
-                    <a href="https://phantom.app/ul/browse/https%3A%2F%2Fjup.ag%2Fswap%2FSOL-24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc?ref=https%3A%2F%2Fphantom.app" target="_blank" class="block w-full text-center py-5 bg-solpup text-black rounded-2xl font-black uppercase tracking-widest hover:scale-[1.02] transition-transform shadow-[0_0_30px_rgba(56,189,248,0.3)] mb-4">
-                        Dołącz przez Phantom 👻
-                    </a>
-                    
-                    <button onclick="copyText('24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc', this)" class="w-full border border-solpup/40 text-solpup py-3 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-solpup/10 transition-all">Kopiuj Adres</button>
-                </div>
-                <div class="grid grid-cols-1 gap-6">
-                    <a href="https://x.com/search?q=24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="glass-card p-8 flex justify-between items-center group hover:bg-solpup/5 transition-colors">
-                        <span class="text-xl font-bold uppercase">Twitter Raid Room</span>
-                        <span class="text-solpup text-3xl group-hover:rotate-12 transition-transform">𝕏</span>
-                    </a>
-                </div>
-            </div>
+            <a href="https://phantom.app/ul/browse/https%3A%2F%2Fjup.ag%2Fswap%2FSOL-24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc?ref=https%3A%2F%2Fphantom.app" target="_blank" class="glass-card flex items-center justify-between bg-solpup text-black border-none">
+                <span class="font-bold text-sm uppercase">Dołącz do Watahy</span>
+                <span class="text-2xl">🚀</span>
+            </a>
+
+            <a href="https://dexscreener.com/solana/24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="glass-card flex items-center justify-between">
+                <span class="font-bold text-sm uppercase">Wykres na żywo</span>
+                <span class="text-2xl">📈</span>
+            </a>
         </div>
     </div>
 
     <script>
+        // Funkcja Licznika
+        function initCounter() {
+            let count = localStorage.getItem('mobtel_visits') || 0;
+            count = parseInt(count) + 1;
+            localStorage.setItem('mobtel_visits', count);
+            
+            // Formatowanie do 4 cyfr
+            const formatted = count.toString().padStart(4, '0');
+            document.getElementById('visitCount').innerText = formatted;
+        }
+
         function openView(viewId) {
-            document.getElementById('splitScreen').style.transform = 'translateX(-100vw)';
+            document.querySelectorAll('.content-view').forEach(v => v.classList.remove('view-active'));
             document.getElementById(viewId).classList.add('view-active');
-            document.getElementById('backBtn').classList.remove('hidden');
-            document.body.style.overflowY = 'auto';
+            document.body.style.overflow = 'hidden';
         }
 
         function closeViews() {
-            document.getElementById('splitScreen').style.transform = 'translateX(0)';
             document.querySelectorAll('.content-view').forEach(v => v.classList.remove('view-active'));
-            document.getElementById('backBtn').classList.add('hidden');
-            document.body.style.overflowY = 'hidden';
-            window.scrollTo(0, 0);
+            document.body.style.overflow = 'auto';
         }
 
         function copyText(text, btn) {
@@ -370,9 +251,16 @@
             document.body.removeChild(el);
             
             const original = btn.innerText;
-            btn.innerText = 'ADRES SKOPIOWANY';
-            setTimeout(() => btn.innerText = original, 2000);
+            btn.innerText = 'SKOPIOWANO';
+            btn.style.backgroundColor = '#22c55e';
+            setTimeout(() => {
+                btn.innerText = original;
+                btn.style.backgroundColor = '';
+            }, 2000);
         }
+
+        // Inicjalizacja przy załadowaniu
+        window.onload = initCounter;
     </script>
 </body>
 </html>
