@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOBTEL & SOLPUP | Solana Ecosystem</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -51,9 +51,6 @@
         }
         .game-btn {
             background: linear-gradient(135deg, #9945FF 0%, #14F195 100%);
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
             transition: all 0.3s ease;
         }
         .game-btn:hover {
@@ -68,6 +65,15 @@
         .dex-btn:hover {
             background: rgba(255, 255, 255, 0.09);
             border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        .social-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.2s ease;
+        }
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
             transform: translateY(-2px);
         }
         #toast {
@@ -129,56 +135,64 @@
             <!-- CARD 1: MOBTEL -->
             <div class="pro-card pro-card-mobtel rounded-3xl p-6 sm:p-8 flex flex-col">
                 <!-- Card Header -->
-                <div class="flex items-center gap-5 mb-6">
-                    <!-- High-Precision MOBTEL Emblem -->
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white p-2 shadow-[0_0_30px_rgba(234,118,35,0.2)] flex-shrink-0 flex items-center justify-center border border-orange-500/30">
-                        <svg viewBox="0 0 120 125" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-                            <defs>
-                                <linearGradient id="mobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#f97316"/>
-                                    <stop offset="100%" stop-color="#c2410c"/>
-                                </linearGradient>
-                                <filter id="mobShadow" x="-10%" y="-10%" width="130%" height="130%">
-                                    <feDropShadow dx="1.5" dy="2" stdDeviation="1" flood-color="#431407" flood-opacity="0.5"/>
-                                </filter>
-                            </defs>
-                            <!-- Classic Mobtel Loop Shape -->
-                            <path d="M 22,90 L 22,48 A 38,38 0 1,1 98,48 C 98,74 76,90 22,90 Z" fill="none" stroke="url(#mobGrad)" stroke-width="9.5" stroke-linejoin="round" filter="url(#mobShadow)"/>
-                            <!-- Registered R -->
-                            <circle cx="96" cy="14" r="7" fill="none" stroke="#c2410c" stroke-width="1.5"/>
-                            <text x="96" y="17.5" font-family="Arial, sans-serif" font-size="9.5" font-weight="bold" fill="#c2410c" text-anchor="middle">R</text>
-                            <!-- Slab Serif M -->
-                            <path d="M 33,73 L 33,67 L 37,67 L 41,37 L 36,37 L 36,31 L 51,31 L 60,52 L 69,31 L 84,31 L 84,37 L 79,37 L 83,67 L 87,67 L 87,73 L 71,73 L 71,67 L 75,67 L 72,44 L 61,68 L 58,68 L 47,44 L 44,67 L 48,67 L 48,73 Z" fill="url(#mobGrad)" filter="url(#mobShadow)"/>
-                            <!-- MOBTEL Bottom Text -->
-                            <text x="60" y="115" font-family="'Arial Black', Impact, sans-serif" font-size="18.5" font-weight="900" letter-spacing="1.5" fill="url(#mobGrad)" text-anchor="middle" filter="url(#mobShadow)">MOBTEL</text>
-                        </svg>
+                <div class="flex items-center justify-between gap-4 mb-6">
+                    <div class="flex items-center gap-4 min-w-0">
+                        <!-- High-Precision MOBTEL Emblem -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white p-2 shadow-[0_0_30px_rgba(234,118,35,0.2)] flex-shrink-0 flex items-center justify-center border border-orange-500/30">
+                            <svg viewBox="0 0 120 125" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                                <defs>
+                                    <linearGradient id="mobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#f97316"/>
+                                        <stop offset="100%" stop-color="#c2410c"/>
+                                    </linearGradient>
+                                    <filter id="mobShadow" x="-10%" y="-10%" width="130%" height="130%">
+                                        <feDropShadow dx="1.5" dy="2" stdDeviation="1" flood-color="#431407" flood-opacity="0.5"/>
+                                    </filter>
+                                </defs>
+                                <path d="M 22,90 L 22,48 A 38,38 0 1,1 98,48 C 98,74 76,90 22,90 Z" fill="none" stroke="url(#mobGrad)" stroke-width="9.5" stroke-linejoin="round" filter="url(#mobShadow)"/>
+                                <circle cx="96" cy="14" r="7" fill="none" stroke="#c2410c" stroke-width="1.5"/>
+                                <text x="96" y="17.5" font-family="Arial, sans-serif" font-size="9.5" font-weight="bold" fill="#c2410c" text-anchor="middle">R</text>
+                                <path d="M 33,73 L 33,67 L 37,67 L 41,37 L 36,37 L 36,31 L 51,31 L 60,52 L 69,31 L 84,31 L 84,37 L 79,37 L 83,67 L 87,67 L 87,73 L 71,73 L 71,67 L 75,67 L 72,44 L 61,68 L 58,68 L 47,44 L 44,67 L 48,67 L 48,73 Z" fill="url(#mobGrad)" filter="url(#mobShadow)"/>
+                                <text x="60" y="115" font-family="'Arial Black', Impact, sans-serif" font-size="18.5" font-weight="900" letter-spacing="1.5" fill="url(#mobGrad)" text-anchor="middle" filter="url(#mobShadow)">MOBTEL</text>
+                            </svg>
+                        </div>
+
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-2 mb-1">
+                                <h2 class="text-2xl sm:text-3xl font-bold text-white truncate">MOBTEL</h2>
+                                <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-orange-500/10 text-orange-400 border border-orange-500/20 rounded-full">SPL</span>
+                            </div>
+                            <p class="text-slate-400 text-xs flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-[#14F195]"></span>
+                                Solana Mainnet
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="flex-1 min-w-0">
-                        <div class="flex items-center gap-2.5 mb-1">
-                            <h2 class="text-2xl sm:text-3xl font-bold text-white truncate">MOBTEL</h2>
-                            <span class="px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider bg-orange-500/10 text-orange-400 border border-orange-500/20 rounded-full">SPL</span>
-                        </div>
-                        <p class="text-slate-400 text-xs sm:text-sm flex items-center gap-1.5">
-                            <span class="w-2 h-2 rounded-full bg-[#14F195]"></span>
-                            Solana Mainnet
-                        </p>
+                    <!-- Social Links MOBTEL -->
+                    <div class="flex items-center gap-2 flex-shrink-0">
+                        <a href="https://t.me/MobtelCoin2025" target="_blank" title="Telegram" class="social-btn w-10 h-10 rounded-xl flex items-center justify-center text-[#229ED9] hover:border-[#229ED9]/50">
+                            <i class="fa-brands fa-telegram text-lg"></i>
+                        </a>
+                        <a href="https://x.com/MOBTELcoin" target="_blank" title="X (Twitter)" class="social-btn w-10 h-10 rounded-xl flex items-center justify-center text-white hover:border-white/40">
+                            <i class="fa-brands fa-x-twitter text-base"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Live Market Stats (Auto-populated via DexScreener API) -->
+                <!-- Live Market Stats -->
                 <div class="grid grid-cols-3 gap-2.5 mb-6">
-                    <div class="bg-white/[0.03] border border-white/5 rounded-xl p-3 text-left">
+                    <div class="bg-white/[0.03] border border-white/5 rounded-xl p-3 text-left overflow-hidden">
                         <span class="text-[11px] text-slate-400 uppercase tracking-wider block mb-0.5">Price USD</span>
-                        <span id="price-1" class="font-display font-bold text-sm sm:text-base text-white">Live DEX</span>
+                        <span id="price-1" class="font-mono-code font-bold text-xs sm:text-sm text-white block truncate">Loading...</span>
                     </div>
                     <div class="bg-white/[0.03] border border-white/5 rounded-xl p-3 text-left">
                         <span class="text-[11px] text-slate-400 uppercase tracking-wider block mb-0.5">Market Cap</span>
-                        <span id="mcap-1" class="font-display font-bold text-sm sm:text-base text-orange-400">Active</span>
+                        <span id="mcap-1" class="font-display font-bold text-xs sm:text-sm text-orange-400 block truncate">Loading...</span>
                     </div>
                     <div class="bg-white/[0.03] border border-white/5 rounded-xl p-3 text-left">
-                        <span class="text-[11px] text-slate-400 uppercase tracking-wider block mb-0.5">Network</span>
-                        <span class="font-display font-bold text-sm sm:text-base text-[#14F195]">SOL</span>
+                        <span class="text-[11px] text-slate-400 uppercase tracking-wider block mb-0.5">24h Change</span>
+                        <span id="change-1" class="font-display font-bold text-xs sm:text-sm text-[#14F195] block truncate">--</span>
                     </div>
                 </div>
 
@@ -196,19 +210,19 @@
                     </div>
                 </div>
 
-                <!-- Action Buttons -->
-                <div class="grid grid-cols-3 gap-3 mt-auto">
-                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="dex-btn py-3 px-3 rounded-xl font-semibold text-xs sm:text-sm text-white flex items-center justify-center gap-2">
+                <!-- Buy / Trade Buttons (Fixed Mint Parameters) -->
+                <div class="grid grid-cols-3 gap-2.5 mt-auto">
+                    <a href="https://raydium.io/swap/?inputMint=sol&outputMint=24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="dex-btn py-3 px-2 rounded-xl font-semibold text-xs sm:text-sm text-white flex items-center justify-center gap-1.5">
                         <i class="fa-solid fa-right-left text-orange-400 text-xs"></i>
                         <span>Raydium</span>
                     </a>
-                    <a href="https://jup.ag/swap/SOL-24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="dex-btn py-3 px-3 rounded-xl font-semibold text-xs sm:text-sm text-white flex items-center justify-center gap-2">
+                    <a href="https://jup.ag/swap/SOL-24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="dex-btn py-3 px-2 rounded-xl font-semibold text-xs sm:text-sm text-white flex items-center justify-center gap-1.5">
                         <i class="fa-solid fa-rocket text-[#14F195] text-xs"></i>
                         <span>Jupiter</span>
                     </a>
-                    <a href="https://dexscreener.com/solana/24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="dex-btn py-3 px-3 rounded-xl font-semibold text-xs sm:text-sm text-white flex items-center justify-center gap-2">
+                    <a href="https://dexscreener.com/solana/24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="dex-btn py-3 px-2 rounded-xl font-semibold text-xs sm:text-sm text-white flex items-center justify-center gap-1.5">
                         <i class="fa-solid fa-chart-line text-purple-400 text-xs"></i>
-                        <span>Chart</span>
+                        <span>DexScreener</span>
                     </a>
                 </div>
             </div>
@@ -216,95 +230,85 @@
             <!-- CARD 2: SOLPUP -->
             <div class="pro-card pro-card-solpup rounded-3xl p-6 sm:p-8 flex flex-col">
                 <!-- Card Header -->
-                <div class="flex items-center gap-5 mb-6">
-                    <!-- High-Precision SOLPUP Emblem -->
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white p-1 shadow-[0_0_30px_rgba(56,189,248,0.25)] flex-shrink-0 flex items-center justify-center border border-sky-400/30">
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-                            <defs>
-                                <radialGradient id="skyBg" cx="50%" cy="45%" r="55%">
-                                    <stop offset="0%" stop-color="#38bdf8"/>
-                                    <stop offset="100%" stop-color="#0369a1"/>
-                                </radialGradient>
-                                <clipPath id="innerCircle">
-                                    <circle cx="100" cy="112" r="64"/>
-                                </clipPath>
-                                <path id="textArc" d="M 30,105 A 72,72 0 0,1 170,105" />
-                            </defs>
+                <div class="flex items-center justify-between gap-4 mb-6">
+                    <div class="flex items-center gap-4 min-w-0">
+                        <!-- High-Precision SOLPUP Emblem -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white p-1 shadow-[0_0_30px_rgba(56,189,248,0.25)] flex-shrink-0 flex items-center justify-center border border-sky-400/30">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                                <defs>
+                                    <radialGradient id="skyBg" cx="50%" cy="45%" r="55%">
+                                        <stop offset="0%" stop-color="#38bdf8"/>
+                                        <stop offset="100%" stop-color="#0369a1"/>
+                                    </radialGradient>
+                                    <clipPath id="innerCircle">
+                                        <circle cx="100" cy="112" r="64"/>
+                                    </clipPath>
+                                    <path id="textArc" d="M 30,105 A 72,72 0 0,1 170,105" />
+                                </defs>
+                                <circle cx="100" cy="100" r="96" fill="#f8fafc" stroke="#0c243c" stroke-width="5"/>
+                                <circle cx="100" cy="100" r="89" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+                                <text font-family="'Arial Black', Impact, sans-serif" font-size="25" font-weight="900" fill="#0c243c" letter-spacing="3">
+                                    <textPath href="#textArc" startOffset="50%" text-anchor="middle">SOLPUP</textPath>
+                                </text>
+                                <circle cx="100" cy="112" r="64" fill="url(#skyBg)" stroke="#0c243c" stroke-width="4"/>
+                                <g clip-path="url(#innerCircle)">
+                                    <path d="M100,112 L30,50 L50,35 Z" fill="#7dd3fc" opacity="0.2"/>
+                                    <path d="M100,112 L170,50 L150,35 Z" fill="#7dd3fc" opacity="0.2"/>
+                                    <path d="M 132,145 C 158,132 165,158 142,172 C 135,176 128,165 132,145 Z" fill="#f1f5f9" stroke="#0c243c" stroke-width="3.5" stroke-linejoin="round"/>
+                                    <path d="M 65,180 L 68,142 L 56,138 L 66,122 L 134,122 L 142,140 L 134,144 L 138,180 Z" fill="#e2e8f0" stroke="#0c243c" stroke-width="3.5" stroke-linejoin="round"/>
+                                    <path d="M 66,120 L 54,126 L 64,142 L 78,136 L 86,150 L 100,140 L 114,150 L 122,136 L 136,142 L 144,126 L 134,120 Z" fill="#ffffff" stroke="#0c243c" stroke-width="3.5" stroke-linejoin="round"/>
+                                    <path d="M 68,86 L 62,55 C 62,50 68,50 72,54 L 90,74 Z" fill="#ffffff" stroke="#0c243c" stroke-width="3.5" stroke-linejoin="round"/>
+                                    <path d="M 69,80 L 66,62 L 81,74 Z" fill="#cbd5e1"/>
+                                    <path d="M 132,86 L 138,55 C 138,50 132,50 128,54 L 110,74 Z" fill="#ffffff" stroke="#0c243c" stroke-width="3.5" stroke-linejoin="round"/>
+                                    <path d="M 131,80 L 134,62 L 119,74 Z" fill="#cbd5e1"/>
+                                    <path d="M 66,82 C 78,68 122,68 134,82 L 146,92 L 138,98 L 148,110 L 134,116 L 138,126 L 116,128 L 100,136 L 84,128 L 62,126 L 66,116 L 52,110 L 62,98 L 54,92 Z" fill="#ffffff" stroke="#0c243c" stroke-width="3.5" stroke-linejoin="round"/>
+                                    <circle cx="88" cy="96" r="5" fill="#0c243c"/>
+                                    <circle cx="86.5" cy="94.5" r="1.8" fill="#ffffff"/>
+                                    <circle cx="114" cy="96" r="5" fill="#0c243c"/>
+                                    <circle cx="112.5" cy="94.5" r="1.8" fill="#ffffff"/>
+                                    <ellipse cx="104" cy="106" rx="6.5" ry="4.5" fill="#0c243c"/>
+                                    <path d="M 92,114 Q 103,122 114,113" fill="none" stroke="#0c243c" stroke-width="3.5" stroke-linecap="round"/>
+                                </g>
+                                <circle cx="100" cy="112" r="64" fill="none" stroke="#0c243c" stroke-width="4"/>
+                            </svg>
+                        </div>
 
-                            <!-- Outer Coin Rim -->
-                            <circle cx="100" cy="100" r="96" fill="#f8fafc" stroke="#0c243c" stroke-width="5"/>
-                            <circle cx="100" cy="100" r="89" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
-
-                            <!-- Arched SOLPUP Title -->
-                            <text font-family="'Arial Black', Impact, sans-serif" font-size="25" font-weight="900" fill="#0c243c" letter-spacing="3">
-                                <textPath href="#textArc" startOffset="50%" text-anchor="middle">SOLPUP</textPath>
-                            </text>
-
-                            <!-- Inner Blue Portal -->
-                            <circle cx="100" cy="112" r="64" fill="url(#skyBg)" stroke="#0c243c" stroke-width="4"/>
-
-                            <!-- Fluffy White Samoyed Puppy inside clip -->
-                            <g clip-path="url(#innerCircle)">
-                                <!-- Sunburst rays -->
-                                <path d="M100,112 L30,50 L50,35 Z" fill="#7dd3fc" opacity="0.2"/>
-                                <path d="M100,112 L170,50 L150,35 Z" fill="#7dd3fc" opacity="0.2"/>
-                                
-                                <!-- Fluffy Tail -->
-                                <path d="M 132,145 C 158,132 165,158 142,172 C 135,176 128,165 132,145 Z" fill="#f1f5f9" stroke="#0c243c" stroke-width="3.5" stroke-linejoin="round"/>
-                                
-                                <!-- Body & Chest Fur -->
-                                <path d="M 65,180 L 68,142 L 56,138 L 66,122 L 134,122 L 142,140 L 134,144 L 138,180 Z" fill="#e2e8f0" stroke="#0c243c" stroke-width="3.5" stroke-linejoin="round"/>
-                                <path d="M 66,120 L 54,126 L 64,142 L 78,136 L 86,150 L 100,140 L 114,150 L 122,136 L 136,142 L 144,126 L 134,120 Z" fill="#ffffff" stroke="#0c243c" stroke-width="3.5" stroke-linejoin="round"/>
-
-                                <!-- Ears -->
-                                <path d="M 68,86 L 62,55 C 62,50 68,50 72,54 L 90,74 Z" fill="#ffffff" stroke="#0c243c" stroke-width="3.5" stroke-linejoin="round"/>
-                                <path d="M 69,80 L 66,62 L 81,74 Z" fill="#cbd5e1"/>
-                                <path d="M 132,86 L 138,55 C 138,50 132,50 128,54 L 110,74 Z" fill="#ffffff" stroke="#0c243c" stroke-width="3.5" stroke-linejoin="round"/>
-                                <path d="M 131,80 L 134,62 L 119,74 Z" fill="#cbd5e1"/>
-
-                                <!-- Fluffy Head Mane -->
-                                <path d="M 66,82 C 78,68 122,68 134,82 L 146,92 L 138,98 L 148,110 L 134,116 L 138,126 L 116,128 L 100,136 L 84,128 L 62,126 L 66,116 L 52,110 L 62,98 L 54,92 Z" fill="#ffffff" stroke="#0c243c" stroke-width="3.5" stroke-linejoin="round"/>
-
-                                <!-- Eyes -->
-                                <circle cx="88" cy="96" r="5" fill="#0c243c"/>
-                                <circle cx="86.5" cy="94.5" r="1.8" fill="#ffffff"/>
-                                <circle cx="114" cy="96" r="5" fill="#0c243c"/>
-                                <circle cx="112.5" cy="94.5" r="1.8" fill="#ffffff"/>
-
-                                <!-- Cute Snout & Smile -->
-                                <ellipse cx="104" cy="106" rx="6.5" ry="4.5" fill="#0c243c"/>
-                                <path d="M 92,114 Q 103,122 114,113" fill="none" stroke="#0c243c" stroke-width="3.5" stroke-linecap="round"/>
-                            </g>
-                            <!-- Re-stroke inner circle for clean overlap -->
-                            <circle cx="100" cy="112" r="64" fill="none" stroke="#0c243c" stroke-width="4"/>
-                        </svg>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-2 mb-1">
+                                <h2 class="text-2xl sm:text-3xl font-bold text-white truncate">SOLPUP</h2>
+                                <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full">GAMEFI</span>
+                            </div>
+                            <p class="text-slate-400 text-xs flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-[#14F195]"></span>
+                                Solana Mainnet
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="flex-1 min-w-0">
-                        <div class="flex items-center gap-2.5 mb-1">
-                            <h2 class="text-2xl sm:text-3xl font-bold text-white truncate">SOLPUP</h2>
-                            <span class="px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full">MEME / GAME</span>
-                        </div>
-                        <p class="text-slate-400 text-xs sm:text-sm flex items-center gap-1.5">
-                            <span class="w-2 h-2 rounded-full bg-[#14F195]"></span>
-                            Solana Mainnet
-                        </p>
+                    <!-- Social Links SOLPUP -->
+                    <div class="flex items-center gap-2 flex-shrink-0">
+                        <a href="https://t.me/SolPup_alex" target="_blank" title="Telegram" class="social-btn w-10 h-10 rounded-xl flex items-center justify-center text-[#229ED9] hover:border-[#229ED9]/50">
+                            <i class="fa-brands fa-telegram text-lg"></i>
+                        </a>
+                        <a href="https://x.com/SolPuP_Alex" target="_blank" title="X (Twitter)" class="social-btn w-10 h-10 rounded-xl flex items-center justify-center text-white hover:border-white/40">
+                            <i class="fa-brands fa-x-twitter text-base"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Live Market Stats (Auto-populated via DexScreener API) -->
+                <!-- Live Market Stats -->
                 <div class="grid grid-cols-3 gap-2.5 mb-6">
-                    <div class="bg-white/[0.03] border border-white/5 rounded-xl p-3 text-left">
+                    <div class="bg-white/[0.03] border border-white/5 rounded-xl p-3 text-left overflow-hidden">
                         <span class="text-[11px] text-slate-400 uppercase tracking-wider block mb-0.5">Price USD</span>
-                        <span id="price-2" class="font-display font-bold text-sm sm:text-base text-white">Live DEX</span>
+                        <span id="price-2" class="font-mono-code font-bold text-xs sm:text-sm text-white block truncate">Loading...</span>
                     </div>
                     <div class="bg-white/[0.03] border border-white/5 rounded-xl p-3 text-left">
                         <span class="text-[11px] text-slate-400 uppercase tracking-wider block mb-0.5">Market Cap</span>
-                        <span id="mcap-2" class="font-display font-bold text-sm sm:text-base text-sky-400">Active</span>
+                        <span id="mcap-2" class="font-display font-bold text-xs sm:text-sm text-sky-400 block truncate">Loading...</span>
                     </div>
                     <div class="bg-white/[0.03] border border-white/5 rounded-xl p-3 text-left">
-                        <span class="text-[11px] text-slate-400 uppercase tracking-wider block mb-0.5">Utility</span>
-                        <span class="font-display font-bold text-sm sm:text-base text-[#14F195]">GameFi</span>
+                        <span class="text-[11px] text-slate-400 uppercase tracking-wider block mb-0.5">24h Change</span>
+                        <span id="change-2" class="font-display font-bold text-xs sm:text-sm text-[#14F195] block truncate">--</span>
                     </div>
                 </div>
 
@@ -322,17 +326,21 @@
                     </div>
                 </div>
 
-                <!-- Action Buttons -->
-                <div class="grid grid-cols-3 gap-3 mt-auto">
-                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="dex-btn py-3 px-3 rounded-xl font-semibold text-xs sm:text-sm text-white flex items-center justify-center gap-2">
+                <!-- Buy / Trade Buttons (Fixed Mint Parameters + Pump.fun) -->
+                <div class="grid grid-cols-4 gap-2 mt-auto">
+                    <a href="https://pump.fun/coin/6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="dex-btn py-3 px-2 rounded-xl font-semibold text-xs text-white flex items-center justify-center gap-1">
+                        <i class="fa-solid fa-pills text-[#14F195] text-xs"></i>
+                        <span>Pump</span>
+                    </a>
+                    <a href="https://raydium.io/swap/?inputMint=sol&outputMint=6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="dex-btn py-3 px-2 rounded-xl font-semibold text-xs text-white flex items-center justify-center gap-1">
                         <i class="fa-solid fa-right-left text-sky-400 text-xs"></i>
                         <span>Raydium</span>
                     </a>
-                    <a href="https://jup.ag/swap/SOL-6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="dex-btn py-3 px-3 rounded-xl font-semibold text-xs sm:text-sm text-white flex items-center justify-center gap-2">
+                    <a href="https://jup.ag/swap/SOL-6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="dex-btn py-3 px-2 rounded-xl font-semibold text-xs text-white flex items-center justify-center gap-1">
                         <i class="fa-solid fa-rocket text-[#14F195] text-xs"></i>
                         <span>Jupiter</span>
                     </a>
-                    <a href="https://dexscreener.com/solana/6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="dex-btn py-3 px-3 rounded-xl font-semibold text-xs sm:text-sm text-white flex items-center justify-center gap-2">
+                    <a href="https://dexscreener.com/solana/6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="dex-btn py-3 px-2 rounded-xl font-semibold text-xs text-white flex items-center justify-center gap-1">
                         <i class="fa-solid fa-chart-line text-purple-400 text-xs"></i>
                         <span>Chart</span>
                     </a>
@@ -373,31 +381,82 @@
             });
         }
 
-        // Fetch Live Price & Market Cap from DexScreener API
-        async function fetchTokenData(ca, priceId, mcapId) {
+        // Format small crypto prices cleanly without scientific notation
+        function formatCryptoPrice(priceStr) {
+            const num = parseFloat(priceStr);
+            if (isNaN(num) || num <= 0) return 'Live DEX';
+            if (num >= 1) return '$' + num.toFixed(4);
+            if (num >= 0.001) return '$' + num.toFixed(6);
+            if (num >= 0.00001) return '$' + num.toFixed(8);
+            return '$' + num.toFixed(10).replace(/0+$/, '');
+        }
+
+        // Fetch Accurate Live Price & Market Cap from DexScreener API
+        async function fetchTokenData(ca, priceId, mcapId, changeId) {
             try {
                 const res = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${ca}`);
                 const data = await res.json();
+                
                 if (data.pairs && data.pairs.length > 0) {
-                    const pair = data.pairs[0];
+                    // Sort pairs by liquidity/volume to pick the main active pool
+                    const sortedPairs = data.pairs.sort((a, b) => {
+                        const liqA = a.liquidity?.usd || a.fdv || 0;
+                        const liqB = b.liquidity?.usd || b.fdv || 0;
+                        return liqB - liqA;
+                    });
+                    
+                    const pair = sortedPairs[0];
+                    
+                    // Price USD
                     if (pair.priceUsd) {
-                        const price = parseFloat(pair.priceUsd);
-                        document.getElementById(priceId).innerText = price < 0.0001 ? '$' + price.toExponential(2) : '$' + price.toFixed(6);
+                        document.getElementById(priceId).innerText = formatCryptoPrice(pair.priceUsd);
+                    } else {
+                        document.getElementById(priceId).innerText = 'View Chart';
                     }
-                    const mcap = pair.fdv || pair.marketCap;
+
+                    // Market Cap / FDV
+                    const mcap = pair.marketCap || pair.fdv;
                     if (mcap) {
-                        document.getElementById(mcapId).innerText = mcap >= 1000000 
-                            ? '$' + (mcap / 1000000).toFixed(2) + 'M' 
-                            : '$' + (mcap / 1000).toFixed(1) + 'K';
+                        if (mcap >= 1000000) {
+                            document.getElementById(mcapId).innerText = '$' + (mcap / 1000000).toFixed(2) + 'M';
+                        } else if (mcap >= 1000) {
+                            document.getElementById(mcapId).innerText = '$' + (mcap / 1000).toFixed(1) + 'K';
+                        } else {
+                            document.getElementById(mcapId).innerText = '$' + Math.round(mcap);
+                        }
+                    } else {
+                        document.getElementById(mcapId).innerText = 'Active';
                     }
+
+                    // 24h Price Change
+                    const change24h = pair.priceChange?.h24;
+                    const changeEl = document.getElementById(changeId);
+                    if (change24h !== undefined && change24h !== null) {
+                        const val = parseFloat(change24h);
+                        changeEl.innerText = (val >= 0 ? '+' : '') + val.toFixed(2) + '%';
+                        changeEl.className = `font-display font-bold text-xs sm:text-sm block truncate ${val >= 0 ? 'text-[#14F195]' : 'text-rose-400'}`;
+                    } else {
+                        changeEl.innerText = 'LIVE';
+                    }
+                } else {
+                    document.getElementById(priceId).innerText = 'On DEX';
+                    document.getElementById(mcapId).innerText = 'Active';
+                    document.getElementById(changeId).innerText = 'SPL';
                 }
             } catch (e) {
-                console.log('DEX API fetch skipped');
+                document.getElementById(priceId).innerText = 'On DEX';
+                document.getElementById(mcapId).innerText = 'Active';
             }
         }
 
-        fetchTokenData('24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc', 'price-1', 'mcap-1');
-        fetchTokenData('6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump', 'price-2', 'mcap-2');
+        function refreshAllPrices() {
+            fetchTokenData('24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc', 'price-1', 'mcap-1', 'change-1');
+            fetchTokenData('6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump', 'price-2', 'mcap-2', 'change-2');
+        }
+
+        // Initial load + auto-refresh every 15 seconds
+        refreshAllPrices();
+        setInterval(refreshAllPrices, 15000);
     </script>
 </body>
 </html>
