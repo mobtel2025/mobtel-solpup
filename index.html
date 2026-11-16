@@ -1,1 +1,274 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Ecosystem | Solana Tokens</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'crypto-bg': '#0B0E14',
+                        'crypto-card': '#151924',
+                        'crypto-accent': '#14F195', /* Solana Green */
+                        'crypto-purple': '#9945FF', /* Solana Purple */
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B0E14;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(to right, #9945FF, #14F195);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(153, 69, 255, 0.3);
+        }
+
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(20, 241, 149, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(20, 241, 149, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(20, 241, 149, 0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- Background Effects -->
+    <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-crypto-purple rounded-full mix-blend-multiply filter blur-[150px] opacity-20 z-0 pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-crypto-accent rounded-full mix-blend-multiply filter blur-[150px] opacity-10 z-0 pointer-events-none"></div>
+
+    <!-- Navbar -->
+    <nav class="w-full p-6 relative z-10 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-crypto-purple to-crypto-accent flex items-center justify-center font-bold text-xl">
+                E
+            </div>
+            <span class="font-bold text-xl tracking-wide">Ecosystem</span>
+        </div>
+        <div>
+            <button class="px-6 py-2 rounded-full border border-gray-700 hover:border-crypto-accent transition-colors bg-gray-800/50 backdrop-blur-sm text-sm font-semibold">
+                Connect Wallet
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow flex flex-col items-center justify-start pt-16 pb-24 px-4 relative z-10">
+        <div class="text-center max-w-3xl mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-crypto-accent/10 text-crypto-accent border border-crypto-accent/20 mb-6 text-sm font-medium">
+                <span class="w-2 h-2 rounded-full bg-crypto-accent pulse-dot"></span>
+                Multi-Token System live on Solana
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                The future is <br/> <span class="gradient-text">Our Ecosystem</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl mb-8">
+                Discover the power of two integrated tokens. Invest, trade, and build with us on the fastest blockchain in the world.
+            </p>
+        </div>
+
+        <!-- Tokens Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
+            
+            <!-- Token 1 Card (Mobtel) -->
+            <div class="crypto-card rounded-3xl p-8 border border-gray-800 card-hover relative overflow-hidden flex flex-col">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-crypto-purple to-crypto-accent opacity-50"></div>
+                
+                <div class="flex justify-between items-start mb-6">
+                    <div class="flex items-center gap-4">
+                        <!-- Mobtel Logo -->
+                        <img src="12838.jpg" alt="Mobtel Logo" class="w-16 h-16 rounded-full border-2 border-gray-700 object-cover bg-white">
+                        <div>
+                            <h2 class="text-2xl font-bold">Mobtel</h2>
+                            <p class="text-gray-400 font-semibold">$MOBTEL</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-2xl font-bold">$0.0042</p>
+                        <p class="text-crypto-accent text-sm font-semibold flex items-center justify-end gap-1">
+                            <i class="fa-solid fa-arrow-trend-up"></i> +12.4%
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-[#0B0E14] rounded-xl p-4 mb-6 border border-gray-800/50">
+                    <p class="text-xs text-gray-500 mb-2 uppercase font-semibold">Contract Address (CA)</p>
+                    <div class="flex items-center justify-between bg-gray-900/50 rounded-lg p-3 font-mono text-sm border border-gray-800">
+                        <span class="truncate text-gray-300 mr-4">24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc</span>
+                        <button onclick="copyToClipboard('24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc', 'copy-btn-1')" id="copy-btn-1" class="text-gray-400 hover:text-white transition-colors p-2 bg-gray-800 rounded-md shrink-0 cursor-pointer" title="Copy address">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-auto">
+                    <a href="https://dexscreener.com/solana/24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="w-full py-3 rounded-xl border border-gray-700 hover:border-gray-500 bg-gray-800/50 flex items-center justify-center gap-2 font-medium transition-colors">
+                        <i class="fa-solid fa-chart-line"></i> DexScreener
+                    </a>
+                    <a href="https://jup.ag/swap/SOL-24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="w-full py-3 rounded-xl bg-gradient-to-r from-crypto-purple to-blue-600 hover:opacity-90 flex items-center justify-center gap-2 font-medium transition-opacity text-white">
+                        <i class="fa-solid fa-money-bill-transfer"></i> Buy (Jupiter)
+                    </a>
+                    <a href="https://raydium.io/swap/?outputCurrency=24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="col-span-2 w-full py-3 rounded-xl border border-crypto-purple/30 text-crypto-purple hover:bg-crypto-purple/10 flex items-center justify-center gap-2 font-medium transition-colors">
+                         Buy on Raydium <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Token 2 Card -->
+            <div class="crypto-card rounded-3xl p-8 border border-gray-800 card-hover relative overflow-hidden flex flex-col">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-crypto-accent opacity-50"></div>
+                
+                <div class="flex justify-between items-start mb-6">
+                    <div class="flex items-center gap-4">
+                        <!-- Placeholder Logo -->
+                        <img src="https://placehold.co/80x80/1A3A42/FFFFFF?text=T2" alt="Token 2 Logo" class="w-16 h-16 rounded-full border-2 border-gray-700">
+                        <div>
+                            <h2 class="text-2xl font-bold">Token Two</h2>
+                            <p class="text-gray-400 font-semibold">$TKN2</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-2xl font-bold">$0.0018</p>
+                        <p class="text-red-400 text-sm font-semibold flex items-center justify-end gap-1">
+                            <i class="fa-solid fa-arrow-trend-down"></i> -2.1%
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-[#0B0E14] rounded-xl p-4 mb-6 border border-gray-800/50">
+                    <p class="text-xs text-gray-500 mb-2 uppercase font-semibold">Contract Address (CA)</p>
+                    <div class="flex items-center justify-between bg-gray-900/50 rounded-lg p-3 font-mono text-sm border border-gray-800">
+                        <span class="truncate text-gray-300 mr-4">6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump</span>
+                        <button onclick="copyToClipboard('6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump', 'copy-btn-2')" id="copy-btn-2" class="text-gray-400 hover:text-white transition-colors p-2 bg-gray-800 rounded-md shrink-0 cursor-pointer" title="Copy address">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-auto">
+                    <a href="https://dexscreener.com/solana/6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="w-full py-3 rounded-xl border border-gray-700 hover:border-gray-500 bg-gray-800/50 flex items-center justify-center gap-2 font-medium transition-colors">
+                        <i class="fa-solid fa-chart-line"></i> DexScreener
+                    </a>
+                    <a href="https://jup.ag/swap/SOL-6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-crypto-accent hover:opacity-90 text-gray-900 font-bold flex items-center justify-center gap-2 transition-opacity">
+                        <i class="fa-solid fa-money-bill-transfer"></i> Buy (Jupiter)
+                    </a>
+                    <a href="https://raydium.io/swap/?outputCurrency=6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="col-span-2 w-full py-3 rounded-xl border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 flex items-center justify-center gap-2 font-medium transition-colors">
+                         Buy on Raydium <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-8 border-t border-gray-800/60 mt-auto relative z-10 text-center">
+        <p class="text-gray-500 text-sm mb-2">© 2026 Token Ecosystem. All rights reserved.</p>
+        <p class="text-gray-600 text-xs max-w-2xl mx-auto px-4">
+            Cryptocurrency trading involves high risk. Only invest what you can afford to lose. 
+            This website does not constitute financial advice. Always do your own research (DYOR).
+        </p>
+    </footer>
+
+    <!-- Toast Notification Container (for copy feedback) -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
+
+    <script>
+        // Function to copy text to clipboard and show feedback without annoying alerts
+        function copyToClipboard(text, btnId) {
+            // Create a temporary textarea to hold the text
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                // Execute copy
+                document.execCommand('copy');
+                
+                // Visual feedback on the button
+                const btn = document.getElementById(btnId);
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check text-crypto-accent"></i>';
+                btn.classList.add('border-crypto-accent');
+                
+                // Show floating toast message
+                showToast('Contract address copied!');
+                
+                // Reset button after 2 seconds
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.classList.remove('border-crypto-accent');
+                }, 2000);
+            } catch (err) {
+                console.error('Copy error', err);
+                showToast('Copy error!', true);
+            } finally {
+                document.body.removeChild(textarea);
+            }
+        }
+
+        // Custom Toast Notification System
+        function showToast(message, isError = false) {
+            const container = document.getElementById('toast-container');
+            
+            const toast = document.createElement('div');
+            toast.className = `transform transition-all duration-300 translate-y-10 opacity-0 px-4 py-3 rounded-lg shadow-lg flex items-center gap-3 text-sm font-medium border ${isError ? 'bg-red-900/80 border-red-500 text-white' : 'bg-gray-800/90 border-crypto-accent/50 text-white'}`;
+            
+            const icon = isError ? '<i class="fa-solid fa-triangle-exclamation text-red-500"></i>' : '<i class="fa-solid fa-circle-check text-crypto-accent"></i>';
+            toast.innerHTML = `${icon} ${message}`;
+            
+            container.appendChild(toast);
+            
+            // Animate in
+            setTimeout(() => {
+                toast.classList.remove('translate-y-10', 'opacity-0');
+            }, 10);
+            
+            // Animate out and remove after 3 seconds
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => {
+                    container.removeChild(toast);
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
+```
