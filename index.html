@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOBTEL Tokens on Solana</title>
+    <title>MOBTEL & SOLPUP Tokens</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -47,9 +47,9 @@
     <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-[#9945FF] rounded-full mix-blend-multiply filter blur-[128px] opacity-20 z-0 pointer-events-none"></div>
     <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-[#14F195] rounded-full mix-blend-multiply filter blur-[128px] opacity-20 z-0 pointer-events-none"></div>
 
-    <div class="z-10 w-full max-w-7xl">
+    <div class="z-10 w-full max-w-5xl">
         <header class="text-center mb-10">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Official <span class="gradient-text">MOBTEL</span> Tokens</h1>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Official <span class="gradient-text">Solana</span> Tokens</h1>
             <p class="text-slate-400 text-lg mb-8">Secure your assets on the Solana Blockchain</p>
             
             <!-- Game Link Button -->
@@ -58,18 +58,27 @@
             </a>
         </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            <!-- Token 1 Card -->
+            <!-- Token 1 Card: MOBTEL -->
             <div class="glass-card rounded-2xl p-6 lg:p-8 flex flex-col items-center text-center shadow-2xl">
-                <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-[#14F195] shadow-[0_0_20px_rgba(20,241,149,0.3)]">
-                    <!-- Zmiana logo z 12838.jpg, jeśli nazwa jest inna zmień w atrybucie src -->
-                    <img src="12838.jpg" alt="Mobtel Logo" class="w-full h-full object-cover">
+                <!-- MOBTEL SVG Logo -->
+                <div class="w-32 h-32 mb-6 rounded-2xl overflow-hidden border-4 border-[#14F195] shadow-[0_0_20px_rgba(20,241,149,0.3)] bg-white flex items-center justify-center p-2">
+                    <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                        <path d="M 16,81 L 16,36 A 35,35 0 0,1 86,36 C 86,61 66,81 16,81 Z" fill="none" stroke="#a04000" stroke-width="8" stroke-linejoin="round"/>
+                        <path d="M 15,80 L 15,35 A 35,35 0 0,1 85,35 C 85,60 65,80 15,80 Z" fill="none" stroke="#ea7623" stroke-width="8" stroke-linejoin="round"/>
+                        <circle cx="85" cy="15" r="6" fill="none" stroke="#ea7623" stroke-width="1.5" />
+                        <text x="85" y="18.5" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#ea7623" text-anchor="middle">R</text>
+                        <text x="51" y="65" font-family="Georgia, serif" font-size="44" font-weight="bold" fill="#a04000" text-anchor="middle">M</text>
+                        <text x="50" y="64" font-family="Georgia, serif" font-size="44" font-weight="bold" fill="#ea7623" text-anchor="middle">M</text>
+                        <text x="51" y="103" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#a04000" text-anchor="middle">MOBTEL</text>
+                        <text x="50" y="102" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#ea7623" text-anchor="middle">MOBTEL</text>
+                    </svg>
                 </div>
-                <h2 class="text-3xl font-bold mb-1">MOBTEL (Token 1)</h2>
+                <h2 class="text-3xl font-bold mb-1">MOBTEL</h2>
                 <p class="text-[#14F195] font-semibold mb-6">Network: Solana</p>
                 
-                <div class="w-full bg-slate-800/80 rounded-lg p-4 mb-6 border border-slate-700 flex items-center justify-between">
+                <div class="w-full bg-slate-800/80 rounded-lg p-4 mb-8 border border-slate-700 flex items-center justify-between">
                     <div class="overflow-hidden text-left">
                         <p class="text-xs text-slate-400 mb-1">Contract Address</p>
                         <p class="text-sm md:text-base font-mono truncate" id="ca1">24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc</p>
@@ -79,33 +88,61 @@
                     </button>
                 </div>
 
-                <!-- Live Chart Token 1 -->
-                <div class="w-full h-[400px] mb-6 rounded-lg overflow-hidden border border-slate-700 bg-slate-900">
-                    <iframe width="100%" height="100%" src="https://dexscreener.com/solana/24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc?embed=1&theme=dark&info=0" frameborder="0" allowfullscreen></iframe>
-                </div>
-
                 <div class="grid grid-cols-3 gap-3 w-full mt-auto">
-                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="btn-hover bg-[#1e293b] border border-[#334155] text-white py-3 rounded-lg font-medium text-sm flex flex-col items-center justify-center">
+                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="btn-hover bg-[#1e293b] border border-[#334155] text-white py-3 rounded-lg font-medium text-sm flex flex-col items-center justify-center hover:bg-slate-800">
                         <span>Raydium</span>
                     </a>
-                    <a href="https://jup.ag/swap/SOL-24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="btn-hover bg-[#1e293b] border border-[#334155] text-white py-3 rounded-lg font-medium text-sm flex flex-col items-center justify-center">
+                    <a href="https://jup.ag/swap/SOL-24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="btn-hover bg-[#1e293b] border border-[#334155] text-white py-3 rounded-lg font-medium text-sm flex flex-col items-center justify-center hover:bg-slate-800">
                         <span>Jupiter</span>
                     </a>
-                    <a href="https://dexscreener.com/solana/24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="btn-hover bg-[#1e293b] border border-[#334155] text-white py-3 rounded-lg font-medium text-sm flex flex-col items-center justify-center">
+                    <a href="https://dexscreener.com/solana/24zpwrKwoMvi3apnF6pt5wT5bG776eMPpGuy5VcJgMTc" target="_blank" class="btn-hover bg-[#1e293b] border border-[#334155] text-white py-3 rounded-lg font-medium text-sm flex flex-col items-center justify-center hover:bg-slate-800">
                         <span>DexScreener</span>
                     </a>
                 </div>
             </div>
 
-            <!-- Token 2 Card -->
+            <!-- Token 2 Card: SOLPUP -->
             <div class="glass-card rounded-2xl p-6 lg:p-8 flex flex-col items-center text-center shadow-2xl">
-                <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-[#9945FF] shadow-[0_0_20px_rgba(153,69,255,0.3)] bg-white">
-                    <img src="12838.jpg" alt="Mobtel Logo" class="w-full h-full object-cover">
+                <!-- SOLPUP SVG Logo -->
+                <div class="w-32 h-32 mb-6 rounded-full overflow-hidden border-4 border-[#9945FF] shadow-[0_0_20px_rgba(153,69,255,0.3)] bg-white flex items-center justify-center">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                        <!-- Tło (biały ring) -->
+                        <circle cx="50" cy="50" r="48" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+                        
+                        <!-- Wewnętrzne niebieskie koło -->
+                        <circle cx="50" cy="57" r="32" fill="#0284c7" stroke="#0f172a" stroke-width="1.5"/>
+                        
+                        <!-- Tekst SOLPUP na łuku -->
+                        <path id="solpup-curve" d="M 18,52 A 34,34 0 0,1 82,52" fill="transparent" />
+                        <text font-family="Arial, sans-serif" font-size="16" font-weight="900" fill="#0f172a" letter-spacing="1.5">
+                            <textPath href="#solpup-curve" startOffset="50%" text-anchor="middle">SOLPUP</textPath>
+                        </text>
+
+                        <!-- Uszy psa -->
+                        <path d="M 40,40 L 36,25 L 47,33 Z" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M 60,40 L 64,25 L 53,33 Z" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5" stroke-linejoin="round"/>
+                        
+                        <!-- Ciało i pyszczek (Piesek) -->
+                        <path d="M 28,75 C 22,60 30,45 42,35 C 47,30 53,30 58,35 C 70,45 78,60 72,75 C 68,85 32,85 28,75 Z" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+                        
+                        <!-- Ogon -->
+                        <path d="M 68,60 C 80,55 85,65 75,75" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
+
+                        <!-- Twarz - oczy, nos, buzia -->
+                        <circle cx="45" cy="48" r="2.5" fill="#0f172a"/>
+                        <circle cx="55" cy="48" r="2.5" fill="#0f172a"/>
+                        <path d="M 47,56 Q 50,59 53,56" fill="transparent" stroke="#0f172a" stroke-width="1.5"/>
+                        <circle cx="50" cy="53" r="2" fill="#0f172a"/>
+                        
+                        <!-- Zarysy futra -->
+                        <path d="M 35,55 Q 30,62 37,68" fill="transparent" stroke="#cbd5e1" stroke-width="1.5"/>
+                        <path d="M 65,55 Q 70,62 63,68" fill="transparent" stroke="#cbd5e1" stroke-width="1.5"/>
+                    </svg>
                 </div>
-                <h2 class="text-3xl font-bold mb-1">MOBTEL (Token 2)</h2>
+                <h2 class="text-3xl font-bold mb-1">SOLPUP</h2>
                 <p class="text-[#9945FF] font-semibold mb-6">Network: Solana</p>
                 
-                <div class="w-full bg-slate-800/80 rounded-lg p-4 mb-6 border border-slate-700 flex items-center justify-between">
+                <div class="w-full bg-slate-800/80 rounded-lg p-4 mb-8 border border-slate-700 flex items-center justify-between">
                     <div class="overflow-hidden text-left">
                         <p class="text-xs text-slate-400 mb-1">Contract Address</p>
                         <p class="text-sm md:text-base font-mono truncate" id="ca2">6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump</p>
@@ -115,19 +152,14 @@
                     </button>
                 </div>
 
-                <!-- Live Chart Token 2 -->
-                <div class="w-full h-[400px] mb-6 rounded-lg overflow-hidden border border-slate-700 bg-slate-900">
-                    <iframe width="100%" height="100%" src="https://dexscreener.com/solana/6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump?embed=1&theme=dark&info=0" frameborder="0" allowfullscreen></iframe>
-                </div>
-
                 <div class="grid grid-cols-3 gap-3 w-full mt-auto">
-                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="btn-hover bg-[#1e293b] border border-[#334155] text-white py-3 rounded-lg font-medium text-sm flex flex-col items-center justify-center">
+                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="btn-hover bg-[#1e293b] border border-[#334155] text-white py-3 rounded-lg font-medium text-sm flex flex-col items-center justify-center hover:bg-slate-800">
                         <span>Raydium</span>
                     </a>
-                    <a href="https://jup.ag/swap/SOL-6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="btn-hover bg-[#1e293b] border border-[#334155] text-white py-3 rounded-lg font-medium text-sm flex flex-col items-center justify-center">
+                    <a href="https://jup.ag/swap/SOL-6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="btn-hover bg-[#1e293b] border border-[#334155] text-white py-3 rounded-lg font-medium text-sm flex flex-col items-center justify-center hover:bg-slate-800">
                         <span>Jupiter</span>
                     </a>
-                    <a href="https://dexscreener.com/solana/6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="btn-hover bg-[#1e293b] border border-[#334155] text-white py-3 rounded-lg font-medium text-sm flex flex-col items-center justify-center">
+                    <a href="https://dexscreener.com/solana/6xpXEDJFUSVx7YJ9nMV7tdKHRVqg6dEXuGV7u26qpump" target="_blank" class="btn-hover bg-[#1e293b] border border-[#334155] text-white py-3 rounded-lg font-medium text-sm flex flex-col items-center justify-center hover:bg-slate-800">
                         <span>DexScreener</span>
                     </a>
                 </div>
@@ -137,7 +169,7 @@
     </div>
 
     <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-[#14F195] text-slate-900 px-6 py-3 rounded-full font-bold shadow-lg z-50 flex items-center gap-2">
+    <div id="toast" class="fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-[#14F195] text-slate-900 px-6 py-3 rounded-full font-bold shadow-lg z-50 flex items-center gap-2 pointer-events-none">
         <i class="fa-solid fa-circle-check"></i> Address Copied!
     </div>
 
@@ -151,7 +183,7 @@
                 btn.innerHTML = '<i class="fa-solid fa-check text-[#14F195]"></i>';
                 
                 const toast = document.getElementById("toast");
-                toast.className = "fixed left-1/2 transform -translate-x-1/2 bg-[#14F195] text-slate-900 px-6 py-3 rounded-full font-bold shadow-lg z-50 flex items-center gap-2 show";
+                toast.className = "fixed left-1/2 transform -translate-x-1/2 bg-[#14F195] text-slate-900 px-6 py-3 rounded-full font-bold shadow-lg z-50 flex items-center gap-2 show pointer-events-none";
                 
                 setTimeout(function(){ 
                     toast.className = toast.className.replace("show", ""); 
@@ -164,4 +196,3 @@
     </script>
 </body>
 </html>
-
